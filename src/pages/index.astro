@@ -18,7 +18,7 @@ import { Icon } from 'astro-icon/components'
   <ContentMedia imgSrc="/accessible-components.webp">
     <Heading level="h2">What it can do</Heading>
     <p class="text-2xl">
-      Starstrike is a lightweight, desktop utility for Mac and Windows that gives you access to AI-powered quick text actions from anywhere on your system via a global shortcut. You can proofread, rewrite with a different tone, or draft emails, LinkedIn posts, etc. quickly and easily.
+      Starstrike is a lightweight, desktop utility for Mac and Windows that gives you access to AI-powered quick text actions from anywhere on your system via a global shortcut. You can <span class="text-gradient1">proofread</span>, <span class="text-gradient2">rewrite</span> with a different tone, or <span class="text-gradient3">draft</span> emails, LinkedIn posts, etc. quickly and easily.
     </p>
   </ContentMedia>
   <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
@@ -45,7 +45,7 @@ import { Icon } from 'astro-icon/components'
           Starstrike works with any AI service that provides an API, including OpenAI's GPT, Google Gemini, and more.
         </Feature>        
         <Feature icon="lucide:accessibility" title="Access anywhere">
-          Starstrike works on Mac and Windows (Linux coming soon). Show/hide the Starstrike using a single keyboard shortcut.
+          Starstrike works on Mac and Windows (Linux coming soon).<br/>Just a quick keyboard shortcut away <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>A</kbd>.
         </Feature>
 
         <Feature icon="lucide:book-open-check" title="Proofreading">
@@ -154,4 +154,28 @@ import { Icon } from 'astro-icon/components'
     border-radius: var(--radius-md);
     padding: var(--space-s);
   }
+  .text-gradient1 {
+    font-weight: 800;
+    font-style: italic;    
+    background: linear-gradient(to right, rgb(51, 175, 233), rgb(29, 160, 236));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }  
+  .text-gradient2 {
+    font-weight: 800;
+    font-style: italic;    
+    background: linear-gradient(to right, rgb(192, 13, 236), rgb(158, 15, 214));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  } 
+  .text-gradient3 {
+    font-weight: 800;
+    font-style: italic;
+    background: linear-gradient(to right, rgb(238, 151, 37), rgb(212, 162, 24));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }     
 </style>
