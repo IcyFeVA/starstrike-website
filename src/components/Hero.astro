@@ -18,54 +18,61 @@ interface Props {
 const { src = '/hero-comp.webp' }: Props = Astro.props
 ---
 
-<section class="hero my-24">
-  <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-          <slot><span class="text-gradient">Starstrike</span> makes writing blazingly fast</slot>
+<section class="hero relative overflow-hidden">
+  <div class="grid grid-cols-1 lg:grid-cols-[45%_55%] min-h-[600px]">
+    <div class="content-side flex flex-col justify-center p-12 lg:p-24 z-10 bg-[#0f172a] text-white relative">
+      <div class="max-w-xl">
+        <div class="mb-4 inline-flex items-center rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-sm text-indigo-300">
+          Anim aute id magna aliqua ad ad non deserunt sunt. <span class="ml-1 text-indigo-400 font-semibold">Read more →</span>
+        </div>
+        <h1 class="text-5xl font-bold tracking-tight sm:text-6xl mb-6">
+          Data to enrich <br />
+          your business
         </h1>
-        <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <Link
-            href="#get-started"
-            isButton
-            type="secondary"
-            animateOnHover
-            animationType="boop"
-          >
-            <Icon aria-hidden="true" name="lucide:arrow-big-down-dash" size="1.5rem" />
-            Learn More
-          </Link>          
+        <p class="text-lg text-gray-300 mb-8">
+          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+        </p>
+        <div class="flex flex-wrap gap-4">
           <Link
             href="#get-started"
             isButton
             type="primary"
-            animateOnHover
-            animationType="boop"
+            class="bg-indigo-600 hover:bg-indigo-500 border-none text-white"
           >
-            <Icon aria-hidden="true" name="lucide:rocket" size="1.5rem" />
-            Get Access
+            Get started
+          </Link>
+          <Link
+            href="#learn-more"
+            class="flex items-center gap-2 text-white hover:text-indigo-300 transition-colors font-semibold"
+          >
+            Learn more <Icon name="lucide:arrow-right" size="1.2rem" />
           </Link>
         </div>
       </div>
-      <Image class="hidden lg:block" src={src} alt="" decoding="async" width={800} height={600} loading="eager" />
+      <!-- Diagonal overlay for the left side to create the angle -->
+      <div class="absolute top-0 right-0 bottom-0 w-32 bg-[#0f172a] translate-x-1/2 skew-x-[-6deg] hidden lg:block origin-bottom"></div>
+    </div>
+    
+    <div class="image-side relative h-64 lg:h-auto">
+      <Image 
+        class="absolute inset-0 w-full h-full object-cover" 
+        src={src} 
+        alt="Hero image" 
+        width={1600} 
+        height={900} 
+        loading="eager" 
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0f172a]/50 to-transparent lg:hidden"></div>
     </div>
   </div>
 </section>
 
 <style lang="scss">
-  h1 {
-    text-wrap: unset;
+  .hero {
+    /* Ensure the section takes full width if needed */
   }
 
-  .text-gradient {
-    background: linear-gradient(
-      315deg,
-      light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
-      light-dark(var(--color-secondary-300), var(--color-primary-200))
-    );
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .content-side {
+    /* Removed clip-path to allow skewed div to extend */
   }
 </style>
