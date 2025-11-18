@@ -22,7 +22,7 @@ const { src = '/hero-comp.webp' }: Props = Astro.props
   <div class="container">
     <div class="relative grid min-h-[600px] grid-cols-1 lg:grid-cols-[45%_55%]">
       <div
-        class="content-side relative z-10 flex flex-col justify-center overflow-hidden bg-[#0f172a] p-8 text-white lg:rounded-l-2xl lg:p-12"
+        class="content-side relative z-10 flex flex-col justify-center overflow-hidden bg-[#0f262a] p-8 text-white lg:rounded-l-2xl lg:p-12"
       >
         <div class="max-w-xl">
           <!-- <div class="mb-4 inline-flex items-center rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-sm text-indigo-300">
@@ -36,25 +36,25 @@ const { src = '/hero-comp.webp' }: Props = Astro.props
             fugiat veniam occaecat fugiat aliqua.
           </p> -->
           <div class="flex flex-wrap gap-4">
-            <Link
+            <!-- <Link
               href="#get-started"
               isButton
               type="primary"
               class="border-none bg-indigo-600 text-white hover:bg-indigo-500"
             >
-              Get started
-            </Link>
+              Get access
+            </Link> -->
             <Link
-              href="#learn-more"
+              href="#get-started"
               class="flex items-center gap-2 font-semibold text-white transition-colors hover:text-indigo-300"
             >
-              Learn more <Icon name="lucide:arrow-right" size="1.2rem" />
+              Learn more <Icon name="lucide:arrow-down" size="1.2rem" />
             </Link>
           </div>
         </div>
         <!-- Diagonal overlay for the left side to create the angle -->
         <!-- <div
-          class="absolute top-0 right-0 bottom-0 hidden w-32 origin-bottom translate-x-1/2 skew-x-[-6deg] bg-[#0f172a] lg:block"
+          class="absolute top-0 right-0 bottom-0 hidden w-32 origin-bottom translate-x-1/2 skew-x-[-6deg] bg-[#0f262a] lg:block"
         >
         </div> -->
       </div>

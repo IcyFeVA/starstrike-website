@@ -51,8 +51,13 @@ import { Icon } from 'astro-icon/components'
     <li class="menu-item">
       <Link href="/contact/">Contact</Link>
     </li>
-    <li class="menu-item highlight">
-      <Link href="https://accessible-astro.incluud.dev/">Get Access</Link>
+    <li class="menu-item">
+      <Link
+        href="#get-started"
+        isButton
+        type="primary"
+        class="max-h-[48px] border-none bg-indigo-600 text-white hover:bg-indigo-500">Get Access</Link
+      >
     </li>
     <!-- <li class="menu-item type-icon animate-rotate">
       <Link href="https://github.com/incluud/accessible-astro-starter">
@@ -60,9 +65,7 @@ import { Icon } from 'astro-icon/components'
         <span class="sr-only">Go to the GitHub page</span>
       </Link>
     </li> -->
-    <li class="menu-item" style="width: 3em;">
-      
-    </li>    
+    <li class="menu-item" style="width: 3em;"></li>
     <li class="menu-item type-icon animate-rotate">
       <DarkMode>
         <Icon aria-hidden="true" name="lucide:moon" slot="light" />
