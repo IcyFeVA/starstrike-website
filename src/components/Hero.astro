@@ -22,7 +22,7 @@ const { src = '/hero-comp.webp' }: Props = Astro.props
   <div class="container">
     <div class="relative grid min-h-[600px] grid-cols-1 lg:grid-cols-[45%_55%]">
       <div
-        class="content-side relative z-10 flex flex-col justify-center overflow-hidden rounded-l-2xl bg-[#0f172a] p-12 text-white lg:p-12"
+        class="content-side relative z-10 flex flex-col justify-center overflow-hidden bg-[#0f172a] p-8 text-white lg:rounded-l-2xl lg:p-12"
       >
         <div class="max-w-xl">
           <!-- <div class="mb-4 inline-flex items-center rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-sm text-indigo-300">
@@ -59,7 +59,7 @@ const { src = '/hero-comp.webp' }: Props = Astro.props
         </div> -->
       </div>
 
-      <div class="image-side relative h-64 overflow-hidden rounded-r-2xl lg:h-auto">
+      <div class="image-side relative h-64 overflow-hidden lg:h-auto lg:rounded-r-2xl">
         <Image
           class="absolute inset-0 h-full w-full object-cover"
           src={src}
