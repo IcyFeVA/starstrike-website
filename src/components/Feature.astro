@@ -16,12 +16,16 @@ interface Props {
    * The title to display
    */
   title: string
+  /**
+   * The color of the feature
+   */
+  color?: string
 }
 
-const { icon = 'mdi:rocket', title = 'Title' }: Props = Astro.props
+const { icon = 'mdi:rocket', title = 'Title', color }: Props = Astro.props
 ---
 
-<div class="feature flex flex-col gap-4">
+<div class="feature flex flex-col gap-4" style={color ? `--feature-color: ${color};` : ''}>
   <Icon aria-hidden="true" name={icon} />
   <div class="content">
     <Heading level="h3" size="h6" class="mb-2">{title}</Heading>
@@ -67,14 +71,14 @@ const { icon = 'mdi:rocket', title = 'Title' }: Props = Astro.props
       z-index: 0;
       inset: var(--space-m) -0.85rem -0.85rem 1rem;
       border-radius: var(--radius-l);
-      background-color: var(--link-color);
+      background-color: var(--feature-color, var(--link-color));
     }
   }
 
   :global(.feature [data-icon]) {
     inline-size: 4rem;
     block-size: auto;
-    color: var(--link-color);
+    color: var(--feature-color, var(--link-color));
   }
 
   :global(.darkmode .feature::before) {
